@@ -1,0 +1,45 @@
+.search-button {
+  color: white !important;
+  text-transform: uppercase;
+  background: none;
+  padding: 5px;
+  border-left: #999999;
+  border: 2px solid white !important;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: all 0.3s ease 0s;
+  height: 39px;
+  width: 90px;
+}
+.search-button:hover {
+  color: #bdbcb2 !important;
+  background-color: white;
+}
+
+.form-control {
+  max-width: 65%;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-control:focus {
+  box-shadow: none !important;
+  border: slategrey !important;
+}
+
+form {
+  margin-left: 15px;
+}
+.btn-outline-light {
+  width: 60px;
+  color: white;
+  margin-bottom: 0 !important;
+  margin-left: 10px;
+}
+.btn-outline-light:hover {
+  color: #999999 !important;
+}
+.search-form {
+  margin-left: 5px;
+  margin-right: 5px;
+}

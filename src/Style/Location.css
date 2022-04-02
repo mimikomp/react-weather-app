@@ -1,0 +1,14 @@
+.location {
+  font-size: 55px;
+  color: #666767;
+  margin-bottom: -10px;
+  margin-left: -3px;
+  font-family: "Shrikhand", cursive;
+}
+.date {
+  margin-bottom: 0px;
+  margin-left: -5px;
+  font-family: "Kanit", sans-serif;
+  font-size: 30px;
+  color: #494747;
+}

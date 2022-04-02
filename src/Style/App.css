@@ -1,0 +1,41 @@
+.update-time,
+h3 {
+  color: #666767;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.column-1,
+.column-2 {
+  list-style: none;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.App {
+  max-width: 740px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  max-width: 740px;
+  margin: 10px auto;
+  margin-top: 45px;
+  padding: 20px;
+  border: 1px solid gainsboro;
+  border-radius: 7px;
+  background: gainsboro;
+}
+
+.overview {
+  margin-top: 10px;
+  font-family: "Encode Sans SC", sans-serif;
+}
+.details {
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+hr {
+  display: block;
+}

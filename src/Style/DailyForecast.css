@@ -1,0 +1,19 @@
+.daily-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.daily-forecast-date {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.daily-forecast-temperature {
+  font-size: 13px;
+}
+
+.daily-forecast-temperature-min {
+  opacity: 0.5;
+}

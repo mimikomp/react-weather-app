@@ -1,0 +1,52 @@
+.icon-temp {
+  top: -80px;
+  margin-top: -30px;
+  margin-left: -35px;
+}
+.main-icon {
+  height: 100px;
+  width: 100px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -5px;
+  font-size: 25px;
+  margin-left: 10px;
+  color: white;
+}
+.weather-temperature .active {
+  font-weight: bolder;
+  cursor: none;
+  background-color: gainsboro;
+  border: 2px solid #f2f2f1;
+  color: gainsboro;
+  background-color: white;
+}
+.current-temp {
+  font-size: 80px;
+  position: relative;
+  top: 29px;
+  color: #666767;
+}
+.fahrenheit-link,
+.celsius-link {
+  text-decoration: none;
+  background-color: gainsboro;
+  color: #f2f2f1;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 7px;
+}
+.fahrenheit-link:hover,
+.celsius-link:hover {
+  color: #666767;
+  text-decoration: none;
+  font-weight: bolder;
+}
