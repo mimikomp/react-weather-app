@@ -14,7 +14,6 @@ export default function App() {
         <Search />
         <Location />
         <Weather />
-        <hr />
       </div>
       <Footer />
     </div>

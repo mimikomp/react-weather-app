@@ -1,52 +1,66 @@
-.icon-temp {
-  top: -80px;
-  margin-top: -30px;
-  margin-left: -35px;
+:root {
+  --weather-color-1: #494747;
+  --weather-color-2: #666767;
+  --weather-color-3: #bdbcb2;
+  --weather-color-4: white;
 }
-.main-icon {
+
+.WeatherTemperature {
+  line-height: 0;
+  margin-top: 0px;
+}
+.WeatherIcon {
   height: 100px;
   width: 100px;
-  margin-right: 15px;
+  margin-right: 10px;
   object-fit: cover;
 }
-.weather-temperature .units {
-  position: relative;
-  font-size: 16px;
-  top: -5px;
-  font-size: 25px;
-  margin-left: 10px;
-  color: white;
+.CurrentTemp {
+  font-size: 80px;
+  color: var(--weather-color-1);
 }
-.weather-temperature .active {
+.Units {
+  position: relative;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--weather-color-2);
+  margin-left: 4px;
+}
+.UnitsRow {
+  display: inline-flex;
+  margin: 0;
+}
+.Units .active {
   font-weight: bolder;
   cursor: none;
-  background-color: gainsboro;
-  border: 2px solid #f2f2f1;
-  color: gainsboro;
-  background-color: white;
+  color: var(--weather-color-1);
 }
-.current-temp {
-  font-size: 80px;
-  position: relative;
-  top: 29px;
-  color: #666767;
+.Units .active:hover {
+  color: var(--weather-color-1);
 }
-.fahrenheit-link,
-.celsius-link {
+.FahrenheitLink,
+.CelsiusLink {
   text-decoration: none;
-  background-color: gainsboro;
-  color: #f2f2f1;
+  color: var(--weather-color-4);
   cursor: pointer;
-  font-size: 20px;
-  padding: 4px;
-  border: 2px solid white;
-  border-radius: 10px;
-  margin-left: 5px;
-  margin-right: 7px;
+  padding: 0 4px 0 4px;
 }
-.fahrenheit-link:hover,
-.celsius-link:hover {
-  color: #666767;
-  text-decoration: none;
+.FahrenheitLink:hover,
+.CelsiusLink:hover {
+  color: var(--weather-color-3);
   font-weight: bolder;
+}
+.Details {
+  font-family: "Encode Sans SC", sans-serif;
+  margin-top: 10px;
+}
+
+.column-1,
+.column-2 {
+  list-style: none;
+  padding: 0;
+  text-transform: capitalize;
+}
+.WeatherDetails ul {
+  margin-bottom: 2px !important;
 }

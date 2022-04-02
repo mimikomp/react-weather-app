@@ -21,28 +21,31 @@ export default function Weather() {
   };
   return (
     <div className="Weather">
-      <div className="row icon-temp">
-        <div className="clearfix weather-temperature">
+      <div className="row">
+        <div className="clearfix WeatherTemperature">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
             alt={WeatherData.condition}
-            className="main-icon float-left"
+            className="WeatherIcon float-left"
           />
-          <strong className="current-temp">{WeatherData.currentTemp}</strong>
-          <span className="units">
-            <a href="/" className="active fahrenheit-link">
-              °F
-            </a>
-            |
-            <a href="/" className="celsius-link">
-              °C
-            </a>
+          <strong className="CurrentTemp align-middle">
+            {WeatherData.currentTemp}
+          </strong>
+          <span className="Units align-middle">
+            <div className="row UnitsRow">
+              <a href="/" className="active FahrenheitLink">
+                °F
+              </a>
+              <a href="/" className="CelsiusLink">
+                °C
+              </a>
+            </div>
           </span>
         </div>
       </div>
       <div className="WeatherDetails">
-        <div className="row details">
-          <div className="col-5">
+        <div className="row Details">
+          <div className="col-6">
             <ul className="column-1">
               <li>{WeatherData.condition}</li>
               <li>Feels like {WeatherData.feelsLike}°</li>
@@ -51,7 +54,7 @@ export default function Weather() {
               </li>
             </ul>
           </div>
-          <div className="col-5">
+          <div className="col-6">
             <ul className="column-2">
               <li>Humidity: {WeatherData.humidity}%</li>
               <li>Wind: {WeatherData.wind} MPH</li>
@@ -63,8 +66,8 @@ export default function Weather() {
           </div>
         </div>
       </div>
-      <hr />
-      <div className="DailyForecast daily-forecast">
+      <div className="DailyForecastWeek daily-forecast">
+        <hr />
         <div className="row">
           <DailyForecast day="Sun" />
           <DailyForecast day="Mon" />
@@ -73,6 +76,7 @@ export default function Weather() {
           <DailyForecast day="Thur" />
           <DailyForecast day="Fri" />
         </div>
+        <hr />
       </div>
     </div>
   );

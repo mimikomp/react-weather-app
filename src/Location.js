@@ -9,7 +9,7 @@ export default function Location() {
   };
   return (
     <div className="Location">
-      <h1 className="location">{WeatherData.city}</h1>
+      <h1 className="city">{WeatherData.city}</h1>
       <h2 className="date">{WeatherData.date}</h2>
       <h3 className="update-time">Last Updated at: {WeatherData.time}</h3>
     </div>

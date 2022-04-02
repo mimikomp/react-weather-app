@@ -1,7 +1,10 @@
+:root {
+  --forecast-color-1: #494747;
+}
+
 .daily-forecast {
-  margin-top: 20px;
   text-align: center;
-  color: black;
+  color: var(--forecast-color-1);
   font-family: "Encode Sans SC", sans-serif;
 }
 
