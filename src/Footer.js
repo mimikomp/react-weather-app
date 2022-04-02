@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <small className="Footer">
       <a
-        href="https://github.com/mimikomp/weather-app-w7.git"
+        href="https://github.com/mimikomp/react-weather-app"
         target="_blank"
         rel="noreferrer"
       >
