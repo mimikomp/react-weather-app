@@ -3,7 +3,6 @@ import React from "react";
 import "./Style/App.css";
 
 import Search from "./Search";
-import Location from "./Location";
 import Weather from "./Weather";
 import Footer from "./Footer";
 
@@ -12,7 +11,6 @@ export default function App() {
     <div className="App">
       <div className="weather-app">
         <Search />
-        <Location />
         <Weather defaultCity="Milwaukee" />
       </div>
       <Footer />

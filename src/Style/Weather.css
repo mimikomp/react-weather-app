@@ -3,6 +3,33 @@
   --weather-color-2: #666767;
   --weather-color-3: #bdbcb2;
   --weather-color-4: white;
+  --location-color-1: #666767;
+  --location-color-2: #494747;
+}
+
+.Location {
+  margin-left: 5px;
+}
+.City {
+  font-size: 58px;
+  color: var(--location-color-1);
+  line-height: 1;
+  margin-bottom: -5px;
+  margin-top: 12px;
+  font-family: "Shrikhand", cursive;
+}
+.Date {
+  margin-bottom: 0px;
+  font-family: "Kanit", sans-serif;
+  font-size: 26px;
+  color: var(--location-color-2);
+}
+.Time,
+h3 {
+  color: var(--location-color-1);
+  font-size: 18px;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin-bottom: 2px;
 }
 
 .WeatherTemperature {

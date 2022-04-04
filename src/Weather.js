@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Style/Weather.css";
 import DailyForecast from "./DailyForecast";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -9,9 +10,10 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      city: response.data.name,
+      country: response.data.sys.country,
       temperature: response.data.main.temp,
-      date: "Sunday, February 27",
-      time: "6:15 PM",
+      date: new Date(response.data.dt * 1000),
       condition: response.data.weather[0].description,
       feelsLike: response.data.main.feels_like,
       high: response.data.main.temp_max,
@@ -29,6 +31,15 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
+        <div className="Location">
+          <h1 className="City">
+            {weatherData.city}, {weatherData.country}
+          </h1>
+          <h2 className="Date text-uppercase">
+            <FormattedDate date={weatherData.date} />
+          </h2>
+          <h3 className="Time">Last Updated at:</h3>
+        </div>
         <div className="row">
           <div className="clearfix WeatherTemperature">
             <img
