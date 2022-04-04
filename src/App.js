@@ -13,7 +13,7 @@ export default function App() {
       <div className="weather-app">
         <Search />
         <Location />
-        <Weather />
+        <Weather defaultCity="Milwaukee" />
       </div>
       <Footer />
     </div>

@@ -12,13 +12,13 @@ export default function DailyForecast(props) {
     <div className="col-2">
       <div className="DailyForecastDate">{props.day}</div>
       <img src={WeatherData.icon} alt="icon1" width="60" />
-      <div class="daily-forecast-temperature">
-        <span class="daily-forecast-temperature-max">
+      <div className="daily-forecast-temperature">
+        <span className="daily-forecast-temperature-max">
           {" "}
           {WeatherData.maxTemp}°{" "}
         </span>{" "}
         |
-        <span class="daily-forecast-temperature-min">
+        <span className="daily-forecast-temperature-min">
           {" "}
           {WeatherData.minTemp}°{" "}
         </span>
