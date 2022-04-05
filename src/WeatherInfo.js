@@ -4,6 +4,7 @@ import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
 import Sunset from "./Sunset";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -20,26 +21,14 @@ export default function WeatherInfo(props) {
           <FormattedTime time={props.info.timestamp} />
         </h3>
       </div>
-      <div className="row">
-        <div className="clearfix WeatherTemperature">
-          <span className="WeatherIcon float-left">
-            <WeatherIcon code={props.info.icon} />
-          </span>
-          <strong className="CurrentTemp align-middle">
-            {Math.round(props.info.temperature)}
-          </strong>
-          <span className="Units align-middle">
-            <div className="row UnitsRow">
-              <a href="/" className="active FahrenheitLink">
-                °F
-              </a>
-              <a href="/" className="CelsiusLink">
-                °C
-              </a>
-            </div>
-          </span>
-        </div>
+
+      <div className="IconTemperature">
+        <span className="WeatherIcon float-left">
+          <WeatherIcon code={props.info.icon} />
+        </span>
+        <WeatherTemperature fahrenheit={props.info.temperature} />
       </div>
+
       <div className="WeatherDetails">
         <div className="row Details">
           <div className="col-6">
