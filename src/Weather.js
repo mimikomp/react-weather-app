@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Style/Weather.css";
-import DailyForecast from "./DailyForecast";
-import FormattedDate from "./FormattedDate";
-import FormattedTime from "./FormattedTime";
-import Sunset from "./Sunset";
+import "./Style/WeatherInfo.css";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -28,92 +26,63 @@ export default function Weather(props) {
       timezone: response.data.timezone,
     });
   }
+  function search() {
+    let apiKey = "24fdddb47fb7d6dc033e94d25b05d649";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
-        <div className="Location">
-          <h1 className="City">
-            {weatherData.city}, {weatherData.country}
-          </h1>
-          <h2 className="Date text-uppercase">
-            <FormattedDate date={weatherData.timestamp} />
-          </h2>
-          <h3 className="Time">
-            Last Updated at:
-            <FormattedTime time={weatherData.timestamp} />
-          </h3>
-        </div>
-        <div className="row">
-          <div className="clearfix WeatherTemperature">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt={weatherData.condition}
-              className="WeatherIcon float-left"
-            />
-            <strong className="CurrentTemp align-middle">
-              {Math.round(weatherData.temperature)}
-            </strong>
-            <span className="Units align-middle">
-              <div className="row UnitsRow">
-                <a href="/" className="active FahrenheitLink">
-                  °F
-                </a>
-                <a href="/" className="CelsiusLink">
-                  °C
-                </a>
+      <div className="WeatherData">
+        <div className="Search">
+          <form className="search-form" onSubmit={handleSubmit}>
+            <div className="row justify-content-start">
+              <div className="col-7 form-column">
+                <input
+                  type="search"
+                  placeholder="Enter a city..."
+                  autoFocus="on"
+                  autoComplete="off"
+                  className="form-control"
+                  onChange={handleCityChange}
+                />
               </div>
-            </span>
-          </div>
-        </div>
-        <div className="WeatherDetails">
-          <div className="row Details">
-            <div className="col-6">
-              <ul className="column-1">
-                <li>{weatherData.condition}</li>
-                <li>Feels like {Math.round(weatherData.feelsLike)}°</li>
-                <li>
-                  High {Math.round(weatherData.high)}° | Low{" "}
-                  {Math.round(weatherData.low)}°
-                </li>
-              </ul>
+              <div className="col-3 search-column">
+                <input type="submit" value="Search" className="search-button" />
+              </div>
+              <div className="col-2 current-column">
+                <button className="btn btn-outline-light" type="submit">
+                  <svg
+                    max-width="1.3em"
+                    height="1.3em"
+                    viewBox="0 0 16 16"
+                    className="bi bi-geo-alt"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div className="col-6">
-              <ul className="column-2">
-                <li>Humidity: {weatherData.humidity}%</li>
-                <li>Wind: {Math.round(weatherData.wind)} MPH</li>
-                <li>
-                  {" "}
-                  Sunset:
-                  <Sunset
-                    time={weatherData.sunsetTimestamp}
-                    timezone={weatherData.timezone}
-                    localTimestamp={weatherData.timestamp}
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
+          </form>
         </div>
-        <div className="DailyForecastWeek daily-forecast">
-          <hr />
-          <div className="row">
-            <DailyForecast day={0} />
-            <DailyForecast day={1} />
-            <DailyForecast day={2} />
-            <DailyForecast day={3} />
-            <DailyForecast day={4} />
-            <DailyForecast day={5} />
-          </div>
-          <hr />
-        </div>
+        <WeatherInfo info={weatherData} />
       </div>
     );
   } else {
-    let apiKey = "24fdddb47fb7d6dc033e94d25b05d649";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }

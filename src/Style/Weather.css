@@ -1,93 +1,53 @@
 :root {
-  --weather-color-1: #494747;
-  --weather-color-2: #666767;
-  --weather-color-3: #bdbcb2;
-  --weather-color-4: white;
-  --location-color-1: #666767;
-  --location-color-2: #494747;
+  --search-color-1: #bdbcb2;
+  --search-color-2: white;
+  --search-color-3: #999999;
 }
 
-.Location {
+.search-button {
+  color: var(--search-color-1) !important;
+  text-transform: uppercase;
+  background: var(--search-color-2);
+  padding: 5px;
+  border: 2px solid var(--search-color-2) !important;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  width: 90px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.search-button:hover {
+  color: var(--search-color-1) !important;
+  background-color: var(--search-color-2);
+}
+.form-control {
+  box-shadow: none !important;
+  border: var(--search-color-3) !important;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  height: 100%;
+}
+.form-control::placeholder {
+  color: var(--search-color-1);
+}
+.btn-outline-light {
+  width: 50px;
+  color: var(--search-color-2);
+  border-radius: 6px;
+}
+.btn-outline-light:hover {
+  color: var(--search-color-3) !important;
+}
+.search-form {
   margin-left: 5px;
+  margin-right: 5px;
 }
-.City {
-  font-size: 58px;
-  color: var(--location-color-1);
-  line-height: 1;
-  margin-bottom: -5px;
-  margin-top: 12px;
-  font-family: "Shrikhand", cursive;
+.form-column {
+  padding: 0 0 0 6px;
 }
-.Date {
-  margin-bottom: 0px;
-  font-family: "Kanit", sans-serif;
-  font-size: 26px;
-  color: var(--location-color-2);
+.search-column {
+  padding: 0 0 0 2px;
 }
-.Time,
-h3 {
-  color: var(--location-color-1);
-  font-size: 18px;
-  font-family: "Open Sans Condensed", sans-serif;
-  margin-bottom: 2px;
-}
-
-.WeatherTemperature {
-  line-height: 0;
-  margin-top: 0px;
-}
-.WeatherIcon {
-  height: 100px;
-  width: 100px;
-  margin-right: 10px;
-  object-fit: cover;
-}
-.CurrentTemp {
-  font-size: 80px;
-  color: var(--weather-color-1);
-}
-.Units {
-  position: relative;
-  font-size: 28px;
-  line-height: 1.2;
-  color: var(--weather-color-2);
-  margin-left: 4px;
-}
-.UnitsRow {
-  display: inline-flex;
-  margin: 0;
-}
-.Units .active {
-  font-weight: bolder;
-  cursor: none;
-  color: var(--weather-color-1);
-}
-.Units .active:hover {
-  color: var(--weather-color-1);
-}
-.FahrenheitLink,
-.CelsiusLink {
-  text-decoration: none;
-  color: var(--weather-color-4);
-  cursor: pointer;
-  padding: 0 4px 0 4px;
-}
-.FahrenheitLink:hover,
-.CelsiusLink:hover {
-  color: var(--weather-color-3);
-  font-weight: bolder;
-}
-.Details {
-  font-family: "Encode Sans SC", sans-serif;
-  margin-top: 10px;
-}
-
-.column-1,
-.column-2 {
-  list-style: none;
+.current-column {
   padding: 0;
-  text-transform: capitalize;
-}
-.WeatherDetails ul {
-  margin-bottom: 2px !important;
 }
