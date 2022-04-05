@@ -2,21 +2,21 @@
   --forecast-color-1: #494747;
 }
 
-.daily-forecast {
+.DailyForecast {
   text-align: center;
   color: var(--forecast-color-1);
   font-family: "Encode Sans SC", sans-serif;
 }
 
-.daily-forecast-date {
+.DailyForecast-day {
   font-size: 16px;
   opacity: 0.6;
 }
 
-.daily-forecast-temperature {
+.DailyForecast-temperatures {
   font-size: 13px;
 }
 
-.daily-forecast-temperature-min {
+.DailyForecast-temperature-min {
   opacity: 0.5;
 }

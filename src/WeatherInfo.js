@@ -1,5 +1,4 @@
 import React from "react";
-import DailyForecast from "./DailyForecast";
 import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
 import Sunset from "./Sunset";
@@ -24,7 +23,7 @@ export default function WeatherInfo(props) {
 
       <div className="IconTemperature">
         <span className="WeatherIcon float-left">
-          <WeatherIcon code={props.info.icon} />
+          <WeatherIcon code={props.info.icon} size={100} />
         </span>
         <WeatherTemperature fahrenheit={props.info.temperature} />
       </div>
@@ -57,18 +56,6 @@ export default function WeatherInfo(props) {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="DailyForecastWeek daily-forecast">
-        <hr />
-        <div className="row">
-          <DailyForecast day={0} />
-          <DailyForecast day={1} />
-          <DailyForecast day={2} />
-          <DailyForecast day={3} />
-          <DailyForecast day={4} />
-          <DailyForecast day={5} />
-        </div>
-        <hr />
       </div>
     </div>
   );
