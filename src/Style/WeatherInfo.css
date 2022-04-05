@@ -29,7 +29,7 @@ h3 {
   color: var(--location-color-1);
   font-size: 18px;
   font-family: "Open Sans Condensed", sans-serif;
-  margin-bottom: 2px;
+  margin-bottom: 12px;
 }
 
 .WeatherTemperature {
@@ -41,6 +41,7 @@ h3 {
   width: 100px;
   margin-right: 10px;
   object-fit: cover;
+  vertical-align: middle;
 }
 .CurrentTemp {
   font-size: 80px;
@@ -79,7 +80,7 @@ h3 {
 }
 .Details {
   font-family: "Encode Sans SC", sans-serif;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .column-1,

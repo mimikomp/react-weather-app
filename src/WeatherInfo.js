@@ -3,6 +3,7 @@ import DailyForecast from "./DailyForecast";
 import FormattedDate from "./FormattedDate";
 import FormattedTime from "./FormattedTime";
 import Sunset from "./Sunset";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   return (
@@ -21,11 +22,9 @@ export default function WeatherInfo(props) {
       </div>
       <div className="row">
         <div className="clearfix WeatherTemperature">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt={props.info.condition}
-            className="WeatherIcon float-left"
-          />
+          <span className="WeatherIcon float-left">
+            <WeatherIcon code={props.info.icon} />
+          </span>
           <strong className="CurrentTemp align-middle">
             {Math.round(props.info.temperature)}
           </strong>
