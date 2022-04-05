@@ -3,6 +3,8 @@ import axios from "axios";
 import "./Style/Weather.css";
 import DailyForecast from "./DailyForecast";
 import FormattedDate from "./FormattedDate";
+import FormattedTime from "./FormattedTime";
+import Sunset from "./Sunset";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -13,18 +15,17 @@ export default function Weather(props) {
       city: response.data.name,
       country: response.data.sys.country,
       temperature: response.data.main.temp,
-      date: new Date(response.data.dt * 1000),
+      timestamp: new Date(response.data.dt * 1000),
       condition: response.data.weather[0].description,
       feelsLike: response.data.main.feels_like,
       high: response.data.main.temp_max,
       low: response.data.main.temp_min,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      sunsetTime: "9:44",
-      sunsetAmPm: "PM",
-      sunsetUtc: "-5",
       maxTemp: "46",
       minTemp: "31",
+      sunsetTimestamp: response.data.sys.sunset,
+      timezone: response.data.timezone,
     });
   }
 
@@ -36,9 +37,12 @@ export default function Weather(props) {
             {weatherData.city}, {weatherData.country}
           </h1>
           <h2 className="Date text-uppercase">
-            <FormattedDate date={weatherData.date} />
+            <FormattedDate date={weatherData.timestamp} />
           </h2>
-          <h3 className="Time">Last Updated at:</h3>
+          <h3 className="Time">
+            Last Updated at:
+            <FormattedTime time={weatherData.timestamp} />
+          </h3>
         </div>
         <div className="row">
           <div className="clearfix WeatherTemperature">
@@ -77,10 +81,15 @@ export default function Weather(props) {
             <div className="col-6">
               <ul className="column-2">
                 <li>Humidity: {weatherData.humidity}%</li>
-                <li>Wind: {weatherData.wind} MPH</li>
+                <li>Wind: {Math.round(weatherData.wind)} MPH</li>
                 <li>
-                  Sunset: {weatherData.sunsetTime}
-                  {weatherData.sunsetAmPm} UTC: {weatherData.sunsetUtc}
+                  {" "}
+                  Sunset:
+                  <Sunset
+                    time={weatherData.sunsetTimestamp}
+                    timezone={weatherData.timezone}
+                    localTimestamp={weatherData.timestamp}
+                  />
                 </li>
               </ul>
             </div>

@@ -27,14 +27,14 @@ export default function FormattedDate(props) {
   let day = days[props.date.getDay()];
   let date = props.date.getDate();
   let month = months[props.date.getMonth()];
-  let ordinalNumber =
+  let ordinalIndicator =
     (date >= 4 && date <= 20) || (date >= 24 && date <= 30)
       ? "TH"
       : ["ST", "ND", "RD"][(date % 10) - 1];
   return (
     <div>
       {day} {month}, {date}
-      {ordinalNumber}
+      {ordinalIndicator}
     </div>
   );
 }
