@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Sunset(props) {
   let locationTimezone = props.timezone * 1000;
   let localTimezone = props.localTimestamp.getTimezoneOffset() * -60000;
