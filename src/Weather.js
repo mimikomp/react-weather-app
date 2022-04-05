@@ -35,6 +35,7 @@ export default function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
+    event.target.reset();
   }
   function handleCityChange(event) {
     setCity(event.target.value);
@@ -51,7 +52,6 @@ export default function Weather(props) {
                   type="search"
                   placeholder="Enter a city..."
                   autoFocus="on"
-                  autoComplete="off"
                   className="form-control"
                   onChange={handleCityChange}
                 />
