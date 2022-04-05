@@ -9,6 +9,7 @@ export default function WeatherTemperature(props) {
   }
   function showFahrenheit(event) {
     event.preventDefault();
+    event.stopPropagation();
     setUnit("fahrenheit");
   }
   function convertToCelsius() {
@@ -43,10 +44,10 @@ export default function WeatherTemperature(props) {
 
         <span className="Units align-middle">
           <div className="row UnitsRow">
-            <a href="/" className="active CelsiusLink" onClick={showFahrenheit}>
+            <a href="/" className="active CelsiusLink">
               °C
             </a>
-            <a href="/" className="FahrenheitLink">
+            <a href="/" className="FahrenheitLink" onClick={showFahrenheit}>
               °F
             </a>
           </div>
