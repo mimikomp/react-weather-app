@@ -15,8 +15,8 @@
   font-size: 58px;
   color: var(--location-color-1);
   line-height: 1;
-  margin-bottom: -5px;
-  margin-top: 12px;
+  margin-bottom: 0px;
+  margin-top: 14px;
   font-family: "Shrikhand", cursive;
 }
 .Date {
