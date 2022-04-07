@@ -65,7 +65,7 @@ h3 {
 }
 .Units .active {
   font-weight: bolder;
-  cursor: not-allowed;
+  cursor: none;
   color: var(--weather-color-1);
 }
 .Units .active:hover {
