@@ -25,6 +25,7 @@ export default function DailyForecast(props) {
               return (
                 <div className="col" key={index}>
                   <WeatherForecastDay data={dailyForecast} />
+                  null
                 </div>
               );
             }
