@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WeatherDetails from "./WeatherDetails";
-import DailyForecast from "./DailyForecast";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherTemperature(props) {
   const [unitFahrenheit, setUnitFahrenheit] = useState(true);
@@ -33,12 +33,12 @@ export default function WeatherTemperature(props) {
         </span>
         <div className="WeatherDetails">
           <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
-          <hr />
-          <DailyForecast
+          <hr className="mt-4" />
+          <WeatherForecast
             coordinates={props.data.coordinates}
             unitFahrenheit={unitFahrenheit}
           />
-          <hr />
+          <hr className="mb-2" />
         </div>
       </span>
     );
@@ -62,7 +62,7 @@ export default function WeatherTemperature(props) {
         <div className="WeatherDetails">
           <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
           <hr />
-          <DailyForecast
+          <WeatherForecast
             coordinates={props.data.coordinates}
             unitFahrenheit={unitFahrenheit}
           />

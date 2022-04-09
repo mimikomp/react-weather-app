@@ -2,19 +2,22 @@
   --forecast-color-1: #494747;
 }
 
-.DailyForecast {
+.WeatherForecastDaily,
+.WeatherForecastHourly {
   text-align: center;
   color: var(--forecast-color-1);
   font-family: "Encode Sans SC", sans-serif;
   line-height: 1.5;
 }
 
-.DailyForecast-day {
+.DailyForecast-day,
+.HourlyForecast-time {
   font-size: 16px;
   opacity: 0.6;
 }
 
-.DailyForecast-temperatures {
+.DailyForecast-temperatures,
+.HourlyForecast-temperature {
   font-size: 13px;
 }
 
