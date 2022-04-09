@@ -98,4 +98,5 @@ h3 {
 }
 .WeatherDetails ul {
   margin-bottom: 2px !important;
+  line-height: 1.5;
 }

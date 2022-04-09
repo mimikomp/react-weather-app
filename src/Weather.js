@@ -3,12 +3,10 @@ import axios from "axios";
 import "./Style/Weather.css";
 import "./Style/WeatherInfo.css";
 import WeatherInfo from "./WeatherInfo";
-import DailyForecast from "./DailyForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-
 
   function handleResponse(response) {
     setWeatherData({
@@ -29,22 +27,21 @@ export default function Weather(props) {
       timezone: response.data.timezone,
     });
   }
-  
-   function handleSubmit(event) {
-     event.preventDefault();
-     search();
-     event.target.reset();
-   }
-   
-   function handleCityChange(event) {
-     setCity(event.target.value);
-   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+    event.target.reset();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
   function search() {
-    let apiKey = "24fdddb47fb7d6dc033e94d25b05d649";
+    let apiKey = "90ca9ed08063ead22b7802b62ca127f3";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
- 
 
   if (weatherData.ready) {
     return (
@@ -85,9 +82,6 @@ export default function Weather(props) {
           </form>
         </div>
         <WeatherInfo info={weatherData} />
-        <hr />
-        <DailyForecast coordinates={weatherData.coordinates} />
-        <hr />
       </div>
     );
   } else {

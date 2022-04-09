@@ -1,21 +1,20 @@
 import React, { useState } from "react";
+import WeatherDetails from "./WeatherDetails";
+import DailyForecast from "./DailyForecast";
 
 export default function WeatherTemperature(props) {
-  const [unit, setUnit] = useState("fahrenheit");
+  const [unitFahrenheit, setUnitFahrenheit] = useState(true);
 
-  function showCelsius(event) {
+  function updateUnit(event) {
     event.preventDefault();
-    setUnit("celsius");
+    setUnitFahrenheit(!unitFahrenheit);
   }
-  function showFahrenheit(event) {
-    event.preventDefault();
-    setUnit("fahrenheit");
-  }
+
   function convertToCelsius() {
     return ((props.fahrenheit - 32) * 5) / 9;
   }
 
-  if (unit === "fahrenheit") {
+  if (unitFahrenheit) {
     return (
       <span className="WeatherTemperature">
         <span className="CurrentTemp align-middle">
@@ -27,11 +26,20 @@ export default function WeatherTemperature(props) {
             <span href="/" className="active FahrenheitLink">
               °F
             </span>
-            <a href="/" className="CelsiusLink" onClick={showCelsius}>
+            <a href="/" className="CelsiusLink" onClick={updateUnit}>
               °C
             </a>
           </div>
         </span>
+        <div className="WeatherDetails">
+          <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
+          <hr />
+          <DailyForecast
+            coordinates={props.data.coordinates}
+            unitFahrenheit={unitFahrenheit}
+          />
+          <hr />
+        </div>
       </span>
     );
   } else {
@@ -46,11 +54,20 @@ export default function WeatherTemperature(props) {
             <span href="/" className="active CelsiusLink">
               °C
             </span>
-            <a href="/" className="FahrenheitLink" onClick={showFahrenheit}>
+            <a href="/" className="FahrenheitLink" onClick={updateUnit}>
               °F
             </a>
           </div>
         </span>
+        <div className="WeatherDetails">
+          <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
+          <hr />
+          <DailyForecast
+            coordinates={props.data.coordinates}
+            unitFahrenheit={unitFahrenheit}
+          />
+          <hr />
+        </div>
       </span>
     );
   }

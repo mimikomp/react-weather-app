@@ -8,21 +8,41 @@ export default function WeatherForecastDay(props) {
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     return days[day];
   }
-  return (
-    <div>
-      <div className="DailyForecast-day">{day()}</div>
-      <WeatherIcon code={props.data.weather[0].icon} size={40} />
-      <div className="DailyForecast-temperatures">
-        <span className="DailyForecast-temperature-max">
-          {" "}
-          {Math.round(props.data.temp.max)}°{" "}
-        </span>{" "}
-        |
-        <span className="DailyForecast-temperature-min">
-          {" "}
-          {Math.round(props.data.temp.min)}°{" "}
-        </span>
+  if (props.unitFahrenheit) {
+    return (
+      <div>
+        <div className="DailyForecast-day">{day()}</div>
+        <WeatherIcon code={props.data.weather[0].icon} size={40} />
+        <div className="DailyForecast-temperatures">
+          <span className="DailyForecast-temperature-max">
+            {" "}
+            {Math.round(props.data.temp.max)}°{" "}
+          </span>{" "}
+          |
+          <span className="DailyForecast-temperature-min">
+            {" "}
+            {Math.round(props.data.temp.min)}°{" "}
+          </span>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        <div className="DailyForecast-day">{day()}</div>
+        <WeatherIcon code={props.data.weather[0].icon} size={40} />
+        <div className="DailyForecast-temperatures">
+          <span className="DailyForecast-temperature-max">
+            {" "}
+            {Math.round(((props.data.temp.max - 32) * 5) / 9)}°{" "}
+          </span>{" "}
+          |
+          <span className="DailyForecast-temperature-min">
+            {" "}
+            {Math.round(((props.data.temp.min - 32) * 5) / 9)}°{" "}
+          </span>
+        </div>
+      </div>
+    );
+  }
 }
