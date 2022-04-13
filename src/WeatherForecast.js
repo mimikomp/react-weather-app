@@ -10,6 +10,7 @@ export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [dailyForecast, setDailyForecast] = useState(null);
   const [hourlyForecast, setHourlyForecast] = useState(null);
+  const [showDailyForecast, setShowDailyForecast] = useState(true);
 
   useEffect(() => {
     setLoaded(false);
@@ -19,6 +20,10 @@ export default function WeatherForecast(props) {
     setDailyForecast(response.data.daily);
     setHourlyForecast(response.data.hourly);
     setLoaded(true);
+  }
+  function showForecast(event) {
+    event.preventDefault();
+    setShowDailyForecast(!showDailyForecast);
   }
   const responsive = {
     desktop: {
@@ -35,9 +40,25 @@ export default function WeatherForecast(props) {
     },
   };
 
-  if (loaded) {
+  if (loaded && showDailyForecast) {
     return (
       <div className="DailyHourlyForecast">
+        <button
+          type="button"
+          className="DailyForecastButton active"
+          onClick={showForecast}
+        >
+          Daily
+        </button>
+        <button
+          type="button"
+          className="HourlyForecastButton"
+          onClick={showForecast}
+        >
+          Hourly
+        </button>
+        <hr className="mt-1 mb-2" />
+
         <div className="WeatherForecastDaily">
           <div className="carousel">
             <Carousel
@@ -59,8 +80,29 @@ export default function WeatherForecast(props) {
             </Carousel>
           </div>
         </div>
+      </div>
+    );
+  }
+  if (loaded && !showDailyForecast) {
+    return (
+      <div className="DailyHourlyForecast">
+        <button
+          type="button"
+          className="HourlyForecastButton active"
+          onClick={showForecast}
+        >
+          Hourly
+        </button>
+        <button
+          type="button"
+          className="DailyForecastButton"
+          onClick={showForecast}
+        >
+          Daily
+        </button>
+        <hr className="mt-1 mb-2" />
+
         <div className="WeatherForecastHourly">
-          <hr />
           <div className="carousel">
             <Carousel
               responsive={responsive}

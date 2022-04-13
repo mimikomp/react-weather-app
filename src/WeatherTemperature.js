@@ -33,12 +33,11 @@ export default function WeatherTemperature(props) {
         </span>
         <div className="WeatherDetails">
           <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
-          <hr className="mt-4" />
           <WeatherForecast
             coordinates={props.data.coordinates}
             unitFahrenheit={unitFahrenheit}
           />
-          <hr className="mb-2" />
+          <hr className="mt-2 mb-2" />
         </div>
       </span>
     );
@@ -61,12 +60,11 @@ export default function WeatherTemperature(props) {
         </span>
         <div className="WeatherDetails">
           <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
-          <hr />
           <WeatherForecast
             coordinates={props.data.coordinates}
             unitFahrenheit={unitFahrenheit}
           />
-          <hr />
+          <hr className="mt-2 mb-2" />
         </div>
       </span>
     );
