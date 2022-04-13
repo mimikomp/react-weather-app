@@ -38,7 +38,7 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
   function search() {
-    let apiKey = "af769be7365d5beaa284c2fd49ab6ea1";
+    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -46,7 +46,7 @@ export default function Weather(props) {
   function showPosition(response) {
     let currentLatitude = response.coords.latitude;
     let currentLongitude = response.coords.longitude;
-    let apiKey = "af769be7365d5beaa284c2fd49ab6ea1";
+    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -62,7 +62,7 @@ export default function Weather(props) {
         <div className="Search">
           <form className="search-form" onSubmit={handleSubmit}>
             <div className="row justify-content-start">
-              <div className="col-7 form-column">
+              <div className="col-7 form-column ">
                 <input
                   type="search"
                   placeholder="Enter a city..."
@@ -72,7 +72,7 @@ export default function Weather(props) {
                 />
               </div>
               <div className="col-3 search-column">
-                <input type="submit" value="Search" className="search-button" />
+                <input type="submit" value="SEARCH" className="search-button" />
               </div>
               <div className="col-2 current-column currentLocation">
                 <button
@@ -81,8 +81,6 @@ export default function Weather(props) {
                   onClick={getCurrentPosition}
                 >
                   <svg
-                    max-width="1.3em"
-                    height="1.3em"
                     viewBox="0 0 16 16"
                     className="bi bi-geo-alt"
                     fill="currentColor"

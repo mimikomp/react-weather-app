@@ -21,6 +21,14 @@ export default function WeatherForecast(props) {
     setHourlyForecast(response.data.hourly);
     setLoaded(true);
   }
+  function search() {
+    let lat = props.coordinates.lat;
+    let lon = props.coordinates.lon;
+    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
   function showForecast(event) {
     event.preventDefault();
     setShowDailyForecast(!showDailyForecast);
@@ -36,7 +44,7 @@ export default function WeatherForecast(props) {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 3,
+      items: 4,
     },
   };
 
@@ -66,10 +74,11 @@ export default function WeatherForecast(props) {
               swipeable={true}
               autoPlay={false}
               shouldResetAutoplay={false}
+              firstAndLastGutter={true}
             >
               {dailyForecast.map(function (dailyForecast, index) {
                 return (
-                  <div className="col" key={index}>
+                  <div className="col ForecastCard" key={index}>
                     <WeatherForecastDay
                       data={dailyForecast}
                       unitFahrenheit={props.unitFahrenheit}
@@ -112,7 +121,7 @@ export default function WeatherForecast(props) {
             >
               {hourlyForecast.map(function (hourlyForecast, index) {
                 return (
-                  <div className="col" key={index}>
+                  <div className="col ForecastCard" key={index}>
                     <WeatherForecastHour
                       data={hourlyForecast}
                       unitFahrenheit={props.unitFahrenheit}
@@ -126,13 +135,7 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    let lat = props.coordinates.lat;
-    let lon = props.coordinates.lon;
-    let apiKey = "af769be7365d5beaa284c2fd49ab6ea1";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return null;
   }
 }

@@ -6,15 +6,17 @@
 
 .search-button {
   color: var(--search-color-1) !important;
-  text-transform: uppercase;
   background: var(--search-color-2);
-  padding: 5px;
+  font-size: 2.25vmin;
+  line-height: 1;
+  padding: 0.5vmin;
   border: 2px solid var(--search-color-2) !important;
   border-radius: 6px;
-  transition: all 0.3s ease 0s;
-  width: 90px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  height: 6vmin;
+  width: 13vmin;
+  vertical-align: top;
 }
 .search-button:hover {
   color: var(--search-color-1) !important;
@@ -25,15 +27,28 @@
   border: var(--search-color-3) !important;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  height: 100%;
+  height: 6vmin;
+  padding: 2vmin;
+  font-size: 2.5vmin;
 }
 .form-control::placeholder {
   color: var(--search-color-1);
 }
 .btn-outline-light {
-  width: 50px;
+  width: 8vmin;
+  height: 6vmin;
   color: var(--search-color-2);
   border-radius: 6px;
+  padding: 1vmin;
+  vertical-align: top;
+  transition: none;
+  margin-left: -2vmin;
+}
+.btn-outline-light svg {
+  max-width: 3.5vmin;
+  line-height: 1;
+  vertical-align: top;
+  text-align: center;
 }
 .btn-outline-light:hover {
   color: var(--search-color-3) !important;

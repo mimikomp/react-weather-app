@@ -9,28 +9,28 @@
 
 /* Location Section CSS */
 .Location {
-  margin-left: 5px;
+  margin-left: 0.5vmin;
 }
 .City {
-  font-size: 58px;
+  font-size: 7.5vmin;
   color: var(--location-color-1);
   line-height: 1;
   margin-bottom: 0px;
-  margin-top: 14px;
+  margin-top: 3vmin;
   font-family: "Shrikhand", cursive;
 }
 .Date {
   margin-bottom: 0px;
   font-family: "Kanit", sans-serif;
-  font-size: 26px;
+  font-size: 4vmin;
   color: var(--location-color-2);
 }
 .Time,
 h3 {
   color: var(--location-color-1);
-  font-size: 18px;
+  font-size: 3vmin;
   font-family: "Open Sans Condensed", sans-serif;
-  margin-bottom: 12px;
+  margin-bottom: 3vmin;
 }
 
 /* Icon & Temperature Section CSS */
@@ -39,14 +39,15 @@ h3 {
   margin-top: 0px;
 }
 .WeatherIcon {
-  height: 100px;
-  width: 100px;
-  margin-right: 10px;
+  margin-right: 2vmin;
   object-fit: cover;
   vertical-align: middle;
 }
+.IconMain canvas {
+  max-width: 13vmin;
+}
 .CurrentTemp {
-  font-size: 80px;
+  font-size: 13vmin;
   font-weight: bolder;
   color: var(--weather-color-1);
 }
@@ -54,10 +55,10 @@ h3 {
 /* Units */
 .Units {
   position: relative;
-  font-size: 28px;
+  font-size: 4.5vmin;
   line-height: 1.2;
   color: var(--weather-color-2);
-  margin-left: 4px;
+  margin-left: 0.75vmin;
 }
 .UnitsRow {
   display: inline-flex;
@@ -87,7 +88,9 @@ h3 {
 /* Weather Details Section CSS */
 .Details {
   font-family: "Encode Sans SC", sans-serif;
-  margin-top: 12px;
+  margin-top: 3vmin;
+  font-size: 2.5vmin;
+  color: var(--weather-color-1);
 }
 
 .column-1,

@@ -13,7 +13,8 @@
 .weather-app {
   max-width: 740px;
   margin: 10px auto;
-  margin-top: 45px;
+  margin-top: 10vmin;
+  margin-bottom: 0;
   padding: 30px;
   border: 1px solid gainsboro;
   border-radius: 7px;
@@ -27,4 +28,9 @@
 
 hr {
   display: block;
+}
+.Footer {
+  font-size: 2vmin;
+  line-height: 0.5;
+  padding: 0 5px;
 }
