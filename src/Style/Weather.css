@@ -66,3 +66,8 @@
 .current-column {
   padding: 0;
 }
+
+.WeatherData {
+  padding: 20px;
+  border-radius: 4px;
+}

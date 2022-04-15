@@ -55,10 +55,43 @@ export default function Weather(props) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(showPosition);
   }
+  function WeatherBackground() {
+    let conditionCode = weatherData.icon;
+    let weatherCondtionImage = {
+      "01d": "/img/01d.gif",
+      "01n": "/img/01n.gif",
+      "02d": "/img/02-3d.gif",
+      "02n": "/img/02-3-4n.gif",
+      "03d": "/img/02-3d.gif",
+      "03n": "/img/02-3-4n.gif",
+      "04d": "/img/04d.gif",
+      "04n": "/img/02-3-4n.gif",
+      "09d": "/img/09-10d.gif",
+      "09n": "/img/09-10n.gif",
+      "10d": "/img/09-10d.gif",
+      "10n": "/img/09-10n.gif",
+      "11d": "/img/11d-n.gif",
+      "11n": "/img/11d-n.gif",
+      "13d": "/img/13d.gif",
+      "13n": "/img/13n.gif",
+      "50d": "/img/50d.gif",
+      "50n": "/img/50n.gif",
+    };
+    let backgroundImage = weatherCondtionImage[conditionCode];
+    let weatherBackground = {
+      backgroundImage: `url(${backgroundImage})`,
+      width: "100%",
+      height: "auto",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+    };
+    return weatherBackground;
+  }
 
   if (weatherData.ready) {
     return (
-      <div className="WeatherData">
+      <div className="WeatherData" style={WeatherBackground()}>
         <div className="Search">
           <form className="search-form" onSubmit={handleSubmit}>
             <div className="row justify-content-start">
