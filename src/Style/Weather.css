@@ -1,7 +1,7 @@
 :root {
-  --search-color-1: #bdbcb2;
-  --search-color-2: white;
-  --search-color-3: #999999;
+  --search-color-1: grey;
+  --search-color-2: gainsboro;
+  --search-color-3: dimgray;
 }
 
 .search-button {

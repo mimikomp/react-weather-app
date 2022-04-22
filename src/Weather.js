@@ -77,6 +77,7 @@ export default function Weather(props) {
       "50d": "/img/50d.gif",
       "50n": "/img/50n.gif",
     };
+
     let backgroundImage = weatherCondtionImage[conditionCode];
     let weatherBackground = {
       backgroundImage: `url(${backgroundImage})`,

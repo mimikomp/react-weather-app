@@ -1,13 +1,11 @@
 :root {
-  --forecast-color-1: #494747;
-  --primary-color-2: white;
-  --accent-color-1: tomato;
+  --dark-color: rgba(32, 32, 32);
+  --light-color: rgba(237, 235, 235);
 }
-
 .WeatherForecastDaily,
 .WeatherForecastHourly {
   text-align: center;
-  color: var(--forecast-color-1);
+  color: var(--dark-color);
   font-family: "Encode Sans SC", sans-serif;
 }
 .IconForecast canvas {
@@ -17,7 +15,10 @@
 .DailyForecast-day,
 .HourlyForecast-time {
   font-size: 2.25vmin;
-  opacity: 0.6;
+  color: var(--dark-color);
+  text-shadow: 0.25px -0.25px var(--light-color),
+    -0.25px 0.25px var(--light-color), -0.25px -0.25px var(--light-color),
+    0.25px 0.25px var(--light-color);
 }
 
 .DailyForecast-temperatures,
@@ -26,14 +27,14 @@
 }
 
 .DailyForecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .react-multiple-carousel__arrow {
   background: none !important;
   font-size: 4vmin !important;
 }
 .react-multiple-carousel__arrow::before {
-  color: var(--forecast-color-1) !important;
+  color: var(--dark-color) !important;
 }
 .react-multiple-carousel__arrow--right {
   right: calc(1vw - 20px) !important;
@@ -47,35 +48,37 @@
 }
 .DailyForecastButton,
 .HourlyForecastButton {
-  background-color: var(--forecast-color-1);
-  color: var(--primary-color-2);
+  background-color: var(--light-color);
+  color: var(--dark-color);
   font-family: "Kanit", sans-serif;
   text-transform: uppercase;
   font-size: 2.5vmin;
   line-height: 1;
   margin: 0.5vmin 0.75vmin;
   padding: 1vmin 1.75vmin;
-  border: none;
+  border: 1px solid var(--dark-color);
   border-radius: 4px;
+  letter-spacing: 1px;
 }
 .DailyForecastButton:hover,
 .HourlyForecastButton:hover {
-  background-color: var(--primary-color-2);
-  color: var(--forecast-color-1);
-  border: none;
+  background-color: lightgray;
+  color: var(--dark-color);
+  border: 1px solid var(--dark-color);
 }
 .DailyForecastButton.active,
 .HourlyForecastButton.active {
-  background-color: var(--accent-color-1);
-  color: var(--primary-color-2);
-  border: none;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   cursor: none;
+  border: 1px solid var(--light-color);
 }
 
 .ForecastCard {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 0 auto;
   border-radius: 6px;
   width: 13vmin;
   padding: 2px 4px;
+  color: var(--dark-color);
 }

@@ -1,10 +1,18 @@
 :root {
-  --weather-color-1: #494747;
-  --weather-color-2: #666767;
-  --weather-color-3: #bdbcb2;
-  --weather-color-4: white;
-  --location-color-1: #666767;
-  --location-color-2: #494747;
+  --dark-color: rgba(32, 32, 32);
+  --light-color: rgba(237, 235, 235);
+  --text-shadow-light-thick: 1px -1px var(--light-color),
+    -1px 1px var(--light-color), -1px -1px var(--light-color),
+    1px 1px var(--light-color);
+  --text-shadow-light-thin: 0.25px -0.25px var(--light-color),
+    -0.25px 0.25px var(--light-color), -0.25px -0.25px var(--light-color),
+    0.25px 0.25px var(--light-color);
+}
+.Weather {
+  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
+    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
+  color: var(--dark-color);
+  letter-spacing: 1.25px;
 }
 
 /* Location Section CSS */
@@ -13,24 +21,24 @@
 }
 .City {
   font-size: 7.5vmin;
-  color: var(--location-color-1);
   line-height: 1;
   margin-bottom: 0px;
   margin-top: 3vmin;
   font-family: "Shrikhand", cursive;
+  text-shadow: var(--text-shadow-light-thick);
 }
 .Date {
   margin-bottom: 0px;
   font-family: "Kanit", sans-serif;
   font-size: 4vmin;
-  color: var(--location-color-2);
 }
 .Time,
 h3 {
-  color: var(--location-color-1);
   font-size: 3vmin;
   font-family: "Open Sans Condensed", sans-serif;
   margin-bottom: 3vmin;
+  text-shadow: var(--text-shadow-light-thin);
+  font-weight: bold;
 }
 
 /* Icon & Temperature Section CSS */
@@ -45,11 +53,12 @@ h3 {
 }
 .IconMain canvas {
   max-width: 13vmin;
+
 }
 .CurrentTemp {
   font-size: 13vmin;
   font-weight: bolder;
-  color: var(--weather-color-1);
+  text-shadow: var(--text-shadow-light-thick);
 }
 
 /* Units */
@@ -57,7 +66,6 @@ h3 {
   position: relative;
   font-size: 4.5vmin;
   line-height: 1.2;
-  color: var(--weather-color-2);
   margin-left: 0.75vmin;
 }
 .UnitsRow {
@@ -67,21 +75,30 @@ h3 {
 .Units .active {
   font-weight: bolder;
   cursor: none;
-  color: var(--weather-color-1);
+  color: var(--dark-color);
+  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
+    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
 }
 .Units .active:hover {
-  color: var(--weather-color-1);
+  color: var(--dark-color);
+  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
+    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
 }
+
 .FahrenheitLink,
 .CelsiusLink {
   text-decoration: none;
-  color: var(--weather-color-4);
+  color: var(--light-color);
+  text-shadow: 0.5px -0.5px var(--dark-color), -0.5px 0.5px var(--dark-color),
+    -0.5px -0.5px var(--dark-color), 0.5px 0.5px var(--dark-color);
   cursor: pointer;
   padding: 0 4px 0 4px;
 }
 .FahrenheitLink:hover,
 .CelsiusLink:hover {
-  color: var(--weather-color-3);
+  color: grey;
+  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
+    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
   font-weight: bolder;
 }
 
@@ -90,7 +107,9 @@ h3 {
   font-family: "Encode Sans SC", sans-serif;
   margin-top: 3vmin;
   font-size: 2.5vmin;
-  color: var(--weather-color-1);
+  color: var(--dark-color);
+  font-weight: bold;
+  text-shadow: var(--text-shadow-light-thin);
 }
 
 .column-1,
