@@ -38,7 +38,7 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
   function search() {
-    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
+    let apiKey = "90ca9ed08063ead22b7802b62ca127f3";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -46,7 +46,7 @@ export default function Weather(props) {
   function showPosition(response) {
     let currentLatitude = response.coords.latitude;
     let currentLongitude = response.coords.longitude;
-    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
+    let apiKey = "90ca9ed08063ead22b7802b62ca127f3";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -95,7 +95,7 @@ export default function Weather(props) {
       <div className="WeatherData" style={WeatherBackground()}>
         <div className="Search">
           <form className="search-form" onSubmit={handleSubmit}>
-            <div className="row justify-content-start">
+            <div className="row justify-content-start gx-0">
               <div className="col-7 form-column ">
                 <input
                   type="search"
@@ -110,7 +110,7 @@ export default function Weather(props) {
               </div>
               <div className="col-2 current-column currentLocation">
                 <button
-                  className="btn btn-outline-light"
+                  className="btn btn-outline-light current-button"
                   type="submit"
                   onClick={getCurrentPosition}
                 >

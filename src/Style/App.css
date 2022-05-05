@@ -6,23 +6,16 @@
 }
 
 .App {
-  max-width: 740px;
-  margin: 30px auto;
+  max-width: 90vmin;
+  margin: 3.75vmin auto;
 }
 
 .weather-app {
-  max-width: 740px;
-  margin: 10px auto;
-  margin-top: 10vmin;
-  margin-bottom: 0;
-  padding: 30px;
-  border: 1px solid gainsboro;
-  border-radius: 7px;
-}
-
-.overview {
-  margin-top: 10px;
-  font-family: "Encode Sans SC", sans-serif;
+  max-height: 95vh;
+  padding: 2.5vmin;
+  border: 0.25vmin solid gainsboro;
+  border-radius: 20px;
+  background-color: #f7f7f7;
 }
 
 hr {
@@ -31,5 +24,5 @@ hr {
 .Footer {
   font-size: 2vmin;
   line-height: 0.5;
-  padding: 0 5px;
+  padding: 0 1vmin;
 }

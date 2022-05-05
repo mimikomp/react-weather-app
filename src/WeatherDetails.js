@@ -5,9 +5,9 @@ export default function WeatherDetails(props) {
   if (props.unitFahrenheit) {
     return (
       <div className="WeatherDetails">
-        <div className="row Details">
+        <div className="row">
           <div className="col-6">
-            <ul className="column-1">
+            <ul className="WeatherDetails-column-1">
               <li>{props.data.condition}</li>
               <li>Feels like {Math.round(props.data.feelsLike)}°</li>
               <li>
@@ -17,7 +17,7 @@ export default function WeatherDetails(props) {
             </ul>
           </div>
           <div className="col-6">
-            <ul className="column-2">
+            <ul className="WeatherDetails-column-2">
               <li>Humidity: {props.data.humidity}%</li>
               <li>Wind: {Math.round(props.data.wind)} MPH</li>
               <li>
@@ -39,7 +39,7 @@ export default function WeatherDetails(props) {
       <div className="WeatherDetails">
         <div className="row Details">
           <div className="col-6">
-            <ul className="column-1">
+            <ul className="WeatherDetails-column-1">
               <li>{props.data.condition}</li>
               <li>
                 Feels like {Math.round(((props.data.feelsLike - 32) * 5) / 9)}°
@@ -51,7 +51,7 @@ export default function WeatherDetails(props) {
             </ul>
           </div>
           <div className="col-6">
-            <ul className="column-2">
+            <ul className="WeatherDetails-column-2">
               <li>Humidity: {props.data.humidity}%</li>
               <li>Wind: {Math.round(props.data.wind * 1.609344)} KM/H</li>
               <li>

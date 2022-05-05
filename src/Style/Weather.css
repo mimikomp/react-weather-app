@@ -2,72 +2,92 @@
   --search-color-1: grey;
   --search-color-2: gainsboro;
   --search-color-3: dimgray;
+  --dark-color: rgba(42, 42, 42) !important;
+}
+.Search {
+  margin-top: 2vmin;
+  line-height: 1;
+  margin-left: 2vmin;
 }
 
-.search-button {
-  color: var(--search-color-1) !important;
-  background: var(--search-color-2);
-  font-size: 2.25vmin;
-  line-height: 1;
-  padding: 0.5vmin;
-  border: 2px solid var(--search-color-2) !important;
-  border-radius: 6px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  height: 6vmin;
-  width: 13vmin;
-  vertical-align: top;
-}
-.search-button:hover {
-  color: var(--search-color-1) !important;
-  background-color: var(--search-color-2);
-}
 .form-control {
-  box-shadow: none !important;
-  border: var(--search-color-3) !important;
+  border-radius: 6px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  height: 6vmin;
+  height: 5vmin;
   padding: 2vmin;
-  font-size: 2.5vmin;
+  font-size: 2.25vmin;
+  border: 0.35vmin solid gainsboro;
+  box-shadow: 2px 2px 15px -5px rgba(69, 69, 69, 0.4);
+}
+.form-control:focus {
+  border: 0.35vmin solid gainsboro;
+  box-shadow: 2px 2px 15px -5px rgba(69, 69, 69, 0.4);
+}
+.form-column {
+  width: 55%;
 }
 .form-control::placeholder {
   color: var(--search-color-1);
+  font-size: 2.5vmin;
 }
-.btn-outline-light {
-  width: 8vmin;
-  height: 6vmin;
+
+.search-button {
+  color: var(--search-color-2) !important;
+  background: rgba(0, 0, 0, 0);
+  font-size: 2vmin;
+  font-weight: bolder;
+  line-height: 1;
+  margin: 0 auto;
+  padding: 1vmin;
+  border: 0.45vmin solid var(--search-color-2) !important;
+  border-radius: 1.5vmin;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  height: 5vmin;
+  width: 12vmin;
+  vertical-align: top;
+}
+.search-button:hover {
+  color: black !important;
+  background-color: var(--search-color-2);
+  mix-blend-mode: screen;
+  transition: all 0.5s ease;
+}
+.search-column {
+  padding: 0 0 0 0.65vmin;
+  width: 25%;
+}
+
+.current-button {
+  width: 7vmin;
+  height: 5vmin;
   color: var(--search-color-2);
-  border-radius: 6px;
+  border: 0.45vmin solid var(--search-color-2) !important;
+  border-radius: 1.5vmin;
   padding: 1vmin;
   vertical-align: top;
   transition: none;
-  margin-left: -2vmin;
+  margin-left: -5px;
 }
-.btn-outline-light svg {
-  max-width: 3.5vmin;
-  line-height: 1;
+.current-button svg {
+  max-width: 2.75vmin;
   vertical-align: top;
-  text-align: center;
+  margin-top: -0.15vmin;
 }
-.btn-outline-light:hover {
-  color: var(--search-color-3) !important;
+.current-button:hover {
+  color: black !important;
+  background-color: var(--search-color-2);
+  mix-blend-mode: screen;
+  transition: all 0.5s ease;
 }
-.search-form {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.form-column {
-  padding: 0 0 0 6px;
-}
-.search-column {
-  padding: 0 0 0 2px;
-}
+
 .current-column {
   padding: 0;
+  width: 20%;
 }
 
 .WeatherData {
-  padding: 20px;
-  border-radius: 4px;
+  padding: 2.5vmin 2.5vmin;
+  border-radius: 15px;
 }

@@ -1,124 +1,127 @@
 :root {
-  --dark-color: rgba(32, 32, 32);
+  --dark-color: rgba(42, 42, 42) !important;
   --light-color: rgba(237, 235, 235);
-  --text-shadow-light-thick: 1px -1px var(--light-color),
-    -1px 1px var(--light-color), -1px -1px var(--light-color),
-    1px 1px var(--light-color);
-  --text-shadow-light-thin: 0.25px -0.25px var(--light-color),
-    -0.25px 0.25px var(--light-color), -0.25px -0.25px var(--light-color),
-    0.25px 0.25px var(--light-color);
 }
-.Weather {
-  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
-    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
+
+.WeatherInfo {
   color: var(--dark-color);
   letter-spacing: 1.25px;
+  background-color: rgba(250, 247, 247, 0.6);
+  border-radius: 20px;
+  padding: 1.75vmin 2.5vmin;
+  margin: 2.25vmin 2vmin 0.25vmin 2vmin;
 }
 
 /* Location Section CSS */
 .Location {
   margin-left: 0.5vmin;
+  margin-top: 1vmin;
 }
 .City {
+  color: var(--dark-color);
   font-size: 7.5vmin;
   line-height: 1;
   margin-bottom: 0px;
-  margin-top: 3vmin;
   font-family: "Shrikhand", cursive;
-  text-shadow: var(--text-shadow-light-thick);
 }
 .Date {
-  margin-bottom: 0px;
   font-family: "Kanit", sans-serif;
   font-size: 4vmin;
+  line-height: 1;
+  margin-bottom: 0px;
+  text-transform: uppercase;
 }
-.Time,
-h3 {
-  font-size: 3vmin;
+.Time {
+  font-size: 3.2vmin;
   font-family: "Open Sans Condensed", sans-serif;
-  margin-bottom: 3vmin;
-  text-shadow: var(--text-shadow-light-thin);
   font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 0px;
 }
 
 /* Icon & Temperature Section CSS */
-.IconTemperature {
+.Weather {
   line-height: 0;
-  margin-top: 0px;
+  margin-top: 2vmin;
 }
+
+/* Icon CSS */
 .WeatherIcon {
   margin-right: 2vmin;
+  margin-left: 2vmin;
   object-fit: cover;
   vertical-align: middle;
+  display: inline-block;
 }
-.IconMain canvas {
-  max-width: 13vmin;
+.WeatherIcon canvas {
+  max-width: 12vmin;
+}
 
+/* Current Temperature CSS */
+.TemperatureUnits {
+  display: inline-block;
+}
+.WeatherTemperature {
+  display: inline;
 }
 .CurrentTemp {
   font-size: 13vmin;
   font-weight: bolder;
-  text-shadow: var(--text-shadow-light-thick);
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Units */
 .Units {
-  position: relative;
-  font-size: 4.5vmin;
+  font-size: 4vmin;
   line-height: 1.2;
-  margin-left: 0.75vmin;
+  margin-left: 1.25vmin;
+  vertical-align: middle;
+  display: inline-block;
 }
-.UnitsRow {
-  display: inline-flex;
-  margin: 0;
-}
+
 .Units .active {
-  font-weight: bolder;
   cursor: none;
   color: var(--dark-color);
-  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
-    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
+  font-size: 5vmin;
 }
 .Units .active:hover {
   color: var(--dark-color);
-  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
-    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
 }
 
 .FahrenheitLink,
 .CelsiusLink {
   text-decoration: none;
-  color: var(--light-color);
-  text-shadow: 0.5px -0.5px var(--dark-color), -0.5px 0.5px var(--dark-color),
-    -0.5px -0.5px var(--dark-color), 0.5px 0.5px var(--dark-color);
+  color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  padding: 0 4px 0 4px;
+  font-weight: bolder;
 }
 .FahrenheitLink:hover,
 .CelsiusLink:hover {
   color: grey;
-  text-shadow: 0.5px -0.5px var(--light-color), -0.5px 0.5px var(--light-color),
-    -0.5px -0.5px var(--light-color), 0.5px 0.5px var(--light-color);
-  font-weight: bolder;
+  transition: all 0.4s ease-in-out;
 }
 
 /* Weather Details Section CSS */
-.Details {
-  font-family: "Encode Sans SC", sans-serif;
-  margin-top: 3vmin;
-  font-size: 2.5vmin;
-  color: var(--dark-color);
-  font-weight: bold;
-  text-shadow: var(--text-shadow-light-thin);
+.WeatherDetailsForecast {
+  margin-top: 2vmin;
+  line-height: 1.5;
 }
 
-.column-1,
-.column-2 {
-  list-style: none;
-  padding: 0;
-  text-transform: capitalize;
+.WeatherDetails {
+  font-family: "Kanit", sans-serif;
+  font-size: 2.5vmin;
+  color: var(--dark-color);
+  margin-left: 2vmin;
+  text-transform: uppercase;
 }
 .WeatherDetails ul {
-  line-height: 1.5;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
+
+.WeatherDetails-column-1,
+.WeatherDetails-column-2 {
+  list-style: none;
+  padding: 0;
+}
+

@@ -6,12 +6,12 @@ import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="Weather">
+    <div className="WeatherInfo">
       <div className="Location">
         <h1 className="City">
           {props.info.city}, {props.info.country}
         </h1>
-        <h2 className="Date text-uppercase">
+        <h2 className="Date">
           <FormattedDate date={props.info.timestamp} />
         </h2>
         <h3 className="Time">
@@ -20,10 +20,10 @@ export default function WeatherInfo(props) {
         </h3>
       </div>
 
-      <div className="IconTemperature">
-        <span className="WeatherIcon IconMain float-left">
+      <div className="Weather">
+        <div className="WeatherIcon">
           <WeatherIcon code={props.info.icon} size={100} />
-        </span>
+        </div>
         <WeatherTemperature
           data={props.info}
           fahrenheit={props.info.temperature}

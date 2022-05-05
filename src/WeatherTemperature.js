@@ -16,57 +16,55 @@ export default function WeatherTemperature(props) {
 
   if (unitFahrenheit) {
     return (
-      <span className="WeatherTemperature">
-        <span className="CurrentTemp align-middle">
-          {Math.round(props.fahrenheit)}
-        </span>
-
-        <span className="Units align-middle">
-          <div className="row UnitsRow">
-            <span href="/" className="active FahrenheitLink">
-              °F
-            </span>
-            <a href="/" className="CelsiusLink" onClick={updateUnit}>
-              °C
-            </a>
+      <div className="WeatherTemperature">
+        <div className="TemperatureUnits">
+          <div className="CurrentTemp">{Math.round(props.fahrenheit)}</div>
+          <div className="Units">
+            <div className="row UnitsRow">
+              <span href="/" className="FahrenheitLink active">
+                °F
+              </span>
+              <a href="/" className="CelsiusLink" onClick={updateUnit}>
+                °C
+              </a>
+            </div>
           </div>
-        </span>
-        <div className="WeatherDetails">
+        </div>
+        <div className="WeatherDetailsForecast">
           <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
           <WeatherForecast
             coordinates={props.data.coordinates}
             unitFahrenheit={unitFahrenheit}
           />
-          <hr className="mt-2 mb-2" />
+          <hr className="mt-2 mb-1" />
         </div>
-      </span>
+      </div>
     );
   } else {
     return (
-      <span className="WeatherTemperature">
-        <span className="CurrentTemp align-middle">
-          {Math.round(convertToCelsius())}
-        </span>
-
-        <span className="Units align-middle">
-          <div className="row UnitsRow">
-            <span href="/" className="active CelsiusLink">
-              °C
-            </span>
-            <a href="/" className="FahrenheitLink" onClick={updateUnit}>
-              °F
-            </a>
+      <div className="WeatherTemperature">
+        <div className="TemperatureUnits">
+          <div className="CurrentTemp">{Math.round(convertToCelsius())}</div>
+          <div className="Units">
+            <div className="row UnitsRow">
+              <span href="/" className="CelsiusLink active">
+                °C
+              </span>
+              <a href="/" className="FahrenheitLink" onClick={updateUnit}>
+                °F
+              </a>
+            </div>
           </div>
-        </span>
-        <div className="WeatherDetails">
+        </div>
+        <div className="WeatherDetailsForecast">
           <WeatherDetails data={props.data} unitFahrenheit={unitFahrenheit} />
           <WeatherForecast
             coordinates={props.data.coordinates}
             unitFahrenheit={unitFahrenheit}
           />
-          <hr className="mt-2 mb-2" />
+          <hr className="mt-2 mb-1" />
         </div>
-      </span>
+      </div>
     );
   }
 }
