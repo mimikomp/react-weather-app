@@ -98,8 +98,8 @@
 }
 .FahrenheitLink:hover,
 .CelsiusLink:hover {
-  color: grey;
-  transition: color 0.4s ease-in-out;
+  color: var(--dark-color);
+  transition: color 0.3s ease-in-out;
 }
 
 /* Weather Details Section CSS */

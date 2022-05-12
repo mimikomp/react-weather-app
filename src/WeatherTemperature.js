@@ -46,7 +46,7 @@ export default function WeatherTemperature(props) {
         <div className="TemperatureUnits">
           <div className="CurrentTemp">{Math.round(convertToCelsius())}</div>
           <div className="Units">
-            <div className="row UnitsRow">
+            <div className="row UnitsRow gx-0">
               <span href="/" className="CelsiusLink active">
                 °C
               </span>
