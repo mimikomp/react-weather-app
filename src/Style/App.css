@@ -8,21 +8,28 @@
 .App {
   max-width: 90vmin;
   margin: 3.75vmin auto;
+  margin-top: 1vmin;
 }
 
 .weather-app {
-  max-height: 95vh;
   padding: 2.5vmin;
   border: 0.25vmin solid gainsboro;
   border-radius: 20px;
   background-color: #f7f7f7;
+  margin-bottom: 1vmin;
 }
 
 hr {
   display: block;
 }
 .Footer {
-  font-size: 2vmin;
+  font-size: 2.5vmin;
   line-height: 0.5;
-  padding: 0 1vmin;
+  padding: 0 3vmin;
+}
+
+@media (orientation: portrait) {
+  .App {
+    margin-top: 6vh;
+  }
 }

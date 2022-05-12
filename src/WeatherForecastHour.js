@@ -17,12 +17,12 @@ export default function WeatherForecastHour(props) {
   }
   if (props.unitFahrenheit) {
     return (
-      <div>
+      <div className="Carousel-Inner">
         <div className="HourlyForecast-time">{time()}</div>
         <div className="IconForecast">
           <WeatherIcon code={props.data.weather[0].icon} size={40} />
         </div>
-        <div className="HourlyForecast-temperature">
+        <div className="HourlyForecast-temperatures">
           {Math.round(props.data.temp)}°
         </div>
       </div>
@@ -34,7 +34,7 @@ export default function WeatherForecastHour(props) {
         <div className="IconForecast">
           <WeatherIcon code={props.data.weather[0].icon} size={40} />
         </div>
-        <div className="HourlyForecast-temperature">
+        <div className="HourlyForecast-temperatures">
           {Math.round(((props.data.temp - 32) * 5) / 9)}°
         </div>
       </div>

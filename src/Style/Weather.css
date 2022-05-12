@@ -5,7 +5,7 @@
   --dark-color: rgba(42, 42, 42) !important;
 }
 .Search {
-  margin-top: 2vmin;
+  margin-top: 0.75vmin;
   line-height: 1;
   margin-left: 2vmin;
 }
@@ -17,11 +17,15 @@
   height: 5vmin;
   padding: 2vmin;
   font-size: 2.25vmin;
-  border: 0.35vmin solid gainsboro;
+  border: 0.35vmin solid white;
   box-shadow: 2px 2px 15px -5px rgba(69, 69, 69, 0.4);
 }
 .form-control:focus {
-  border: 0.35vmin solid gainsboro;
+  border: 0.35vmin solid var(--search-color-2);
+  box-shadow: 2px 2px 15px -5px rgba(69, 69, 69, 0.4);
+}
+.form-control:hover {
+  border: 0.35vmin solid var(--search-color-2);
   box-shadow: 2px 2px 15px -5px rgba(69, 69, 69, 0.4);
 }
 .form-column {
@@ -33,8 +37,9 @@
 }
 
 .search-button {
-  color: var(--search-color-2) !important;
-  background: rgba(0, 0, 0, 0);
+  color: black !important;
+  background-color: var(--search-color-2);
+  mix-blend-mode: screen;
   font-size: 2vmin;
   font-weight: bolder;
   line-height: 1;
@@ -49,9 +54,8 @@
   vertical-align: top;
 }
 .search-button:hover {
-  color: black !important;
-  background-color: var(--search-color-2);
-  mix-blend-mode: screen;
+  color: var(--search-color-2) !important;
+  background: rgba(0, 0, 0, 0);
   transition: all 0.5s ease;
 }
 .search-column {
@@ -71,7 +75,7 @@
   margin-left: -5px;
 }
 .current-button svg {
-  max-width: 2.75vmin;
+  max-width: 2.5vmin;
   vertical-align: top;
   margin-top: -0.15vmin;
 }
@@ -90,4 +94,14 @@
 .WeatherData {
   padding: 2.5vmin 2.5vmin;
   border-radius: 15px;
+}
+
+.suggestions-list {
+  display: inline !important;
+  position: absolute;
+  background-color: white !important;
+}
+
+.suggestions {
+  background-color: white;
 }

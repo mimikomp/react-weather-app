@@ -5,7 +5,7 @@ export default function WeatherDetails(props) {
   if (props.unitFahrenheit) {
     return (
       <div className="WeatherDetails">
-        <div className="row">
+        <div className="row Details gx-0">
           <div className="col-6">
             <ul className="WeatherDetails-column-1">
               <li>{props.data.condition}</li>
@@ -37,7 +37,7 @@ export default function WeatherDetails(props) {
   } else {
     return (
       <div className="WeatherDetails">
-        <div className="row Details">
+        <div className="row Details gx-0">
           <div className="col-6">
             <ul className="WeatherDetails-column-1">
               <li>{props.data.condition}</li>

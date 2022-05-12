@@ -10,7 +10,7 @@ export default function WeatherForecastDay(props) {
   }
   if (props.unitFahrenheit) {
     return (
-      <div>
+      <div className="Carousel-Inner">
         <div className="DailyForecast-day">{day()}</div>
         <div className="IconForecast">
           <WeatherIcon code={props.data.weather[0].icon} size={40} />

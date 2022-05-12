@@ -6,8 +6,8 @@
 .WeatherInfo {
   color: var(--dark-color);
   letter-spacing: 1.25px;
-  background-color: rgba(250, 247, 247, 0.6);
-  border-radius: 20px;
+  background-color: rgba(250, 247, 247, 0.5);
+  border-radius: 3vmin;
   padding: 1.75vmin 2.5vmin;
   margin: 2.25vmin 2vmin 0.25vmin 2vmin;
 }
@@ -42,7 +42,7 @@
 /* Icon & Temperature Section CSS */
 .Weather {
   line-height: 0;
-  margin-top: 2vmin;
+  margin-top: 1.75vmin;
 }
 
 /* Icon CSS */
@@ -104,7 +104,7 @@
 
 /* Weather Details Section CSS */
 .WeatherDetailsForecast {
-  margin-top: 2vmin;
+  margin-top: 1.75vmin;
   line-height: 1.5;
 }
 
@@ -125,3 +125,33 @@
   padding: 0;
 }
 
+/* Media Queries */
+@media (orientation: portrait) {
+  .City {
+    margin-bottom: 1vmin;
+  }
+  .WeatherInfo {
+    text-align: center;
+  }
+  .Units {
+    margin-left: 1.5vmin;
+    text-align: start;
+  }
+  .UnitsRow {
+    width: min-content;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  .WeatherDetails {
+    margin-left: 0;
+    margin: 0.25vmin 0;
+  }
+  .WeatherIcon {
+    display: block;
+  }
+  .WeatherIcon canvas {
+    max-width: 8.5vh;
+    margin-bottom: 1vh;
+  }
+}

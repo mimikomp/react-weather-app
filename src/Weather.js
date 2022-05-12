@@ -37,6 +37,7 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+
   function search() {
     let apiKey = "90ca9ed08063ead22b7802b62ca127f3";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -46,7 +47,7 @@ export default function Weather(props) {
   function showPosition(response) {
     let currentLatitude = response.coords.latitude;
     let currentLongitude = response.coords.longitude;
-    let apiKey = "90ca9ed08063ead22b7802b62ca127f3";
+    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -105,9 +106,11 @@ export default function Weather(props) {
                   onChange={handleCityChange}
                 />
               </div>
+
               <div className="col-3 search-column">
                 <input type="submit" value="SEARCH" className="search-button" />
               </div>
+
               <div className="col-2 current-column currentLocation">
                 <button
                   className="btn btn-outline-light current-button"

@@ -5,6 +5,7 @@
 
 .DailyHourlyForecast {
   margin-top: 2vmin;
+  line-height: 1;
 }
 
 /* Daily & Hourly Buttons */
@@ -15,12 +16,13 @@
   font-family: "Kanit", sans-serif;
   font-size: 2.25vmin;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  text-align: center;
+  letter-spacing: 0.15vmin;
   line-height: 1;
   border: 1px solid white !important;
   border-radius: 4px;
   margin: 0.5vmin 0.8vmin;
-  padding: 1vmin 1.9vmin;
+  padding: 1vmin 0.75vmin;
   width: 13vmin;
 }
 .DailyForecastButton:hover,
@@ -46,10 +48,11 @@
   margin-inline-start: 0.1vmin !important;
   margin-inline-end: 0.1vmin !important;
 }
+
 .ForecastCard {
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 2.25vmin;
   padding: 0.9vmin 1vmin;
   color: var(--dark-color);
   width: 12.5vmin;
@@ -78,15 +81,18 @@
   line-height: 1;
 }
 .IconForecast canvas {
-  background-color: white;
-  mix-blend-mode: difference;
-  border-radius: 22px;
-  padding: 1vmin;
-  max-width: 7vmin;
+  background-color: var(--light-color);
+  mix-blend-mode: hard-light;
+  border-radius: 4vmin;
+  border: 0.35vmin solid var(--dark-color);
+  padding: 0.65vmin;
+  width: 6vmin;
   margin: 0.4vmin 0;
 }
-.DailyForecast-temperatures {
-  font-size: 1.65vmin;
+.DailyForecast-temperatures,
+.HourlyForecast-temperatures {
+  font-size: 1.75vmin;
+  text-align: center;
 }
 .DailyForecast-temperature-min {
   opacity: 0.6;
@@ -102,10 +108,53 @@
   font-size: 3vmin !important;
   display: inline-block !important;
 }
-.react-multiple-carousel__arrow--right {
-  right: calc(2vw - 7.5%) !important;
-}
 
 .react-multiple-carousel__arrow--left {
   left: calc(2vw - 7%) !important;
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(2vw - 7.25%) !important;
+}
+
+/* Media Queries */
+@media (orientation: portrait) {
+  .DailyHourlyForecast {
+    margin-top: 1.5vh;
+  }
+  .react-multiple-carousel__arrow--left {
+    left: calc(1vh - 4.5%) !important;
+  }
+  .react-multiple-carousel__arrow--right {
+    right: calc(1vh - 5%) !important;
+  }
+  .ForecastCard {
+    padding: 1.4vmin 1vmin;
+    width: 13.5vmin;
+    margin-bottom: 0.25vh;
+  }
+  .IconForecast canvas {
+    padding: 0.25vh;
+    width: 3vh;
+    margin: 0.35vh 0;
+    border-radius: 2vh;
+  }
+  .DailyForecast-day,
+  .HourlyForecast-time {
+    padding-top: 0.35vmin;
+  }
+}
+@media (max-width: 300px) {
+  .ForecastCard {
+    padding: 2vmin 1vmin;
+    width: 16.5vmin;
+  }
+  .DailyForecast-temperatures {
+    font-size: 1.75vmin;
+  }
+  .react-multiple-carousel__arrow--left {
+    left: calc(2vw - 6%) !important;
+  }
+  .react-multiple-carousel__arrow--right {
+    right: calc(2vw - 5%) !important;
+  }
 }

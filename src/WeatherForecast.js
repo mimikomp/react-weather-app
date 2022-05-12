@@ -24,7 +24,7 @@ export default function WeatherForecast(props) {
   function search() {
     let lat = props.coordinates.lat;
     let lon = props.coordinates.lon;
-    let apiKey = "90ca9ed08063ead22b7802b62ca127f3";
+    let apiKey = "8eb93b89891fb21bdbabdfea05d34bf5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
     axios.get(apiUrl).then(handleResponse);
@@ -45,6 +45,10 @@ export default function WeatherForecast(props) {
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 4,
+    },
+    xsmall: {
+      breakpoint: { max: 300, min: 0 },
+      items: 3,
     },
   };
 
